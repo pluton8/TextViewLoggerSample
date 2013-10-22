@@ -60,6 +60,7 @@
 		146C6ADA1817064800A93671 /* UITextViewLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextViewLogger.h; sourceTree = "<group>"; };
 		146C6ADB1817064800A93671 /* UITextViewLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextViewLogger.m; sourceTree = "<group>"; };
 		146C6ADD181713F100A93671 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		146C6ADE1817153500A93671 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		6C4D7A49E020469BAC3B572F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B30A37B7FD6448AA0F54B9D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +93,7 @@
 		146C6A951816FCC700A93671 = {
 			isa = PBXGroup;
 			children = (
+				146C6ADE1817153500A93671 /* README.md */,
 				146C6AA71816FCC700A93671 /* TextViewLoggerSample */,
 				146C6AC91816FCC700A93671 /* TextViewLoggerSampleTests */,
 				146C6AA01816FCC700A93671 /* Frameworks */,
