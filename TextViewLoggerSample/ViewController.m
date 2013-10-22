@@ -20,6 +20,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     DDLogVerbose(@"%@", NSStringFromSelector(_cmd));
+
+    if (self.viewDidLoadBlock) {
+        self.viewDidLoadBlock(self);
+    }
 }
 
 - (void)didReceiveMemoryWarning

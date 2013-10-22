@@ -10,6 +10,9 @@
 
 #import <CocoaLumberjack/DDTTYLogger.h>
 
+#import "UITextViewLogger.h"
+#import "ViewController.h"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,9 +21,25 @@
 
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
 
+    // setup the text view logger
+    UITextViewLogger *textViewLogger = [UITextViewLogger new];
+    textViewLogger.autoScrollsToBottom = YES;
+    [DDLog addLogger:textViewLogger];
+
+    ViewController *viewController = [self viewController];
+    viewController.viewDidLoadBlock = ^(ViewController *viewController) {
+        textViewLogger.textView = viewController.textView;
+    };
+
     DDLogInfo(@"App started, hurray!");
 
     return YES;
+}
+
+- (ViewController *)viewController {
+    ViewController *viewCtrl = (ViewController *)self.window.rootViewController;
+    NSAssert(viewCtrl != nil, @"Root view controller is of unexpected type");
+    return viewCtrl;
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
