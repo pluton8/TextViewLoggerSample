@@ -17,7 +17,7 @@
 @interface UITextViewLogger : DDAbstractLogger <DDLogger>
 
 // Text view where to print logs to.
-@property (nonatomic, strong) UITextView *textView;
+@property (nonatomic, weak) UITextView *textView;
 // Specifies if the text view should be automatically scrolled
 // to bottom after appending any log message.
 @property (nonatomic, assign) BOOL autoScrollsToBottom;
