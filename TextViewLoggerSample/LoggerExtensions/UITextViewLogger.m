@@ -48,8 +48,8 @@
 
 - (void)logMessage:(DDLogMessage *)logMessage {
 	NSString *logMsg = logMessage->logMsg;
-	if (self.logFormatter) {
-		logMsg = [self.logFormatter formatLogMessage:self.logFormatter];
+	if (formatter) {
+		logMsg = [formatter formatLogMessage:formatter];
 	}
 	
 	if (logMsg) {
