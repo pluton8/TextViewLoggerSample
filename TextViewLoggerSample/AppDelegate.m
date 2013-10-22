@@ -8,11 +8,18 @@
 
 #import "AppDelegate.h"
 
+#import <CocoaLumberjack/DDTTYLogger.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+
+    DDLogInfo(@"App started, hurray!");
+
     return YES;
 }
 							
