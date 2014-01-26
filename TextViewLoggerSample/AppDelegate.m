@@ -32,6 +32,8 @@
     };
 
     DDLogInfo(@"App started, hurray!");
+    DDLogWarn(@"Oh well, a warning here.");
+    DDLogVerbose(@"If you don't mind…");
 
     return YES;
 }
