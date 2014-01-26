@@ -1,4 +1,4 @@
 platform :ios
 
-pod 'CocoaLumberjack', '~> 1.6.2'
+pod 'CocoaLumberjack', '~> 1.8'
 
