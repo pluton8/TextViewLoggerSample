@@ -37,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A67C40D4EC46212C3364D0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		146C6A9E1816FCC700A93671 /* TextViewLoggerSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextViewLoggerSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		146C6AA11816FCC700A93671 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		146C6AA31816FCC700A93671 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,7 +63,7 @@
 		146C6ADD181713F100A93671 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		146C6ADE1817153500A93671 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		6C4D7A49E020469BAC3B572F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B30A37B7FD6448AA0F54B9D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		BE1491BF49C0B33D9FEA144D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +99,8 @@
 				146C6AC91816FCC700A93671 /* TextViewLoggerSampleTests */,
 				146C6AA01816FCC700A93671 /* Frameworks */,
 				146C6A9F1816FCC700A93671 /* Products */,
-				7B30A37B7FD6448AA0F54B9D /* Pods.xcconfig */,
 				146C6ADD181713F100A93671 /* LICENSE */,
+				E71DBD913C34F4EE93D1B15B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -176,6 +177,15 @@
 				146C6ADB1817064800A93671 /* UITextViewLogger.m */,
 			);
 			path = LoggerExtensions;
+			sourceTree = "<group>";
+		};
+		E71DBD913C34F4EE93D1B15B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04A67C40D4EC46212C3364D0 /* Pods.debug.xcconfig */,
+				BE1491BF49C0B33D9FEA144D /* Pods.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -448,13 +458,14 @@
 		};
 		146C6AD41816FCC700A93671 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B30A37B7FD6448AA0F54B9D /* Pods.xcconfig */;
+			baseConfigurationReference = 04A67C40D4EC46212C3364D0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextViewLoggerSample/TextViewLoggerSample-Prefix.pch";
 				INFOPLIST_FILE = "TextViewLoggerSample/TextViewLoggerSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -462,13 +473,14 @@
 		};
 		146C6AD51816FCC700A93671 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B30A37B7FD6448AA0F54B9D /* Pods.xcconfig */;
+			baseConfigurationReference = BE1491BF49C0B33D9FEA144D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TextViewLoggerSample/TextViewLoggerSample-Prefix.pch";
 				INFOPLIST_FILE = "TextViewLoggerSample/TextViewLoggerSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -476,6 +488,7 @@
 		};
 		146C6AD71816FCC700A93671 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A67C40D4EC46212C3364D0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TextViewLoggerSample.app/TextViewLoggerSample";
@@ -499,6 +512,7 @@
 		};
 		146C6AD81816FCC700A93671 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE1491BF49C0B33D9FEA144D /* Pods.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TextViewLoggerSample.app/TextViewLoggerSample";
