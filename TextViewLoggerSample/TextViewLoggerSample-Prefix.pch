@@ -14,6 +14,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
-    #import <CocoaLumberjack/DDLog.h>
-    static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+    #import "CocoaLumberjack.h"
+    static const int ddLogLevel = DDLogLevelVerbose;
 #endif

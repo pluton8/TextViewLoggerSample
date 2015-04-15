@@ -23,61 +23,60 @@
 #pragma mark - Init
 
 - (id)init {
-	if (self = [super init]) {
-		_autoScrollsToBottom = YES;
-	}
-	return self;
+    if (self = [super init]) {
+        _autoScrollsToBottom = YES;
+    }
+    return self;
 }
 
 #pragma mark - Private Stuff
 
 - (void)appendTextViewString:(NSString *)string {
-	NSAssert(self.textView != nil, @"self.textView is nil");
-	
-	dispatch_async(dispatch_get_main_queue(), ^(void) {
-		NSString *newText = [self.textView.text stringByAppendingString:string];
-		self.textView.text = newText;
-		
-		if (self.autoScrollsToBottom) {
-			[self.textView scrollRangeToVisible:NSMakeRange(newText.length, 0)];
-		}
-	});
+    NSAssert(self.textView != nil, @"self.textView is nil");
+    
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        NSString *newText = [self.textView.text stringByAppendingString:string];
+        self.textView.text = newText;
+        
+        if (self.autoScrollsToBottom) {
+            [self.textView scrollRangeToVisible:NSMakeRange(newText.length, 0)];
+        }
+    });
 }
 
 #pragma mark - DDLogger
 
 - (void)logMessage:(DDLogMessage *)logMessage {
-	NSString *logMsg = logMessage->logMsg;
-	if (formatter) {
-		logMsg = [formatter formatLogMessage:logMessage];
-	}
-	
-	if (logMsg) {
-		/* if textView is available, write to it,
-		 otherwise cache it */
-		if (self.textView) {
-			[self appendTextViewString:[NSString stringWithFormat:@"\n%@", logMsg]];
-		} else {
-			if (!self.logMsgCache) {
-				self.logMsgCache = [NSMutableArray array];
-			}
-			
-			[self.logMsgCache addObject:logMsg];
-		}
-	}
+    NSString *logMsg = logMessage->_message;
+    if (_logFormatter) {
+        logMsg = [_logFormatter formatLogMessage:(DDLogMessage *)_logFormatter];
+    }
+    
+    if (logMsg) {
+        /* if textView is available, write to it,
+         otherwise cache it */
+        if (self.textView) {
+            [self appendTextViewString:[NSString stringWithFormat:@"\n%@", logMsg]];
+        } else {
+            if (!self.logMsgCache) {
+                self.logMsgCache = [NSMutableArray array];
+            }
+            [self.logMsgCache addObject:logMsg];
+        }
+    }
 }
 
 #pragma mark - Getters & Setters
 
 - (void)setTextView:(UITextView *)textView {
-	if (_textView != textView) {
-		_textView = textView;
-		
-		NSString *entireLog = [self.logMsgCache componentsJoinedByString:@"\n"];
-		[self.logMsgCache removeAllObjects];
-		
-		[self appendTextViewString:entireLog];
-	}
+    if (_textView != textView) {
+        _textView = textView;
+        
+        NSString *entireLog = [self.logMsgCache componentsJoinedByString:@"\n"];
+        [self.logMsgCache removeAllObjects];
+        
+        [self appendTextViewString:entireLog];
+    }
 }
 
 @end
