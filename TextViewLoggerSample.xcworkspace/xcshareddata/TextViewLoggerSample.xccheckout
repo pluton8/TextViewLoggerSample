@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C18FEA15-FB8A-40A9-BA77-12FFD2395AFE</string>
+	<string>677C4E0F-FE7C-4F7A-BFEE-EB875CF33991</string>
 	<key>IDESourceControlProjectName</key>
 	<string>TextViewLoggerSample</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>95A668C9-1068-4D2D-9AE8-CE593A85311A</key>
-		<string>ssh://github.com/pluton8/TextViewLoggerSample.git</string>
+		<key>8C36936599BAB418C1D57B422BBDB853E9692BF2</key>
+		<string>https://github.com/federicocappelli/TextViewLoggerSample.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>TextViewLoggerSample.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>95A668C9-1068-4D2D-9AE8-CE593A85311A</key>
+		<key>8C36936599BAB418C1D57B422BBDB853E9692BF2</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/pluton8/TextViewLoggerSample.git</string>
+	<string>https://github.com/federicocappelli/TextViewLoggerSample.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>95A668C9-1068-4D2D-9AE8-CE593A85311A</string>
+	<string>8C36936599BAB418C1D57B422BBDB853E9692BF2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>95A668C9-1068-4D2D-9AE8-CE593A85311A</string>
+			<string>8C36936599BAB418C1D57B422BBDB853E9692BF2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>TextViewLoggerSample</string>
 		</dict>

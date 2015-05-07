@@ -34,6 +34,9 @@
 - (void)appendTextViewString:(NSString *)string {
 	NSAssert(self.textView != nil, @"self.textView is nil");
 	
+    if(!string)
+        return;
+    
 	dispatch_async(dispatch_get_main_queue(), ^(void) {
 		NSString *newText = [self.textView.text stringByAppendingString:string];
 		self.textView.text = newText;
@@ -47,9 +50,9 @@
 #pragma mark - DDLogger
 
 - (void)logMessage:(DDLogMessage *)logMessage {
-	NSString *logMsg = logMessage->logMsg;
-	if (formatter) {
-		logMsg = [formatter formatLogMessage:logMessage];
+	NSString *logMsg = logMessage.message;
+	if (_logFormatter) {
+		logMsg = [_logFormatter formatLogMessage:logMessage];
 	}
 	
 	if (logMsg) {

@@ -25,7 +25,7 @@
     UITextViewLogger *textViewLogger = [UITextViewLogger new];
     textViewLogger.autoScrollsToBottom = YES;
     // only log INFO messages to this textViewLogger
-    [DDLog addLogger:textViewLogger withLogLevel:LOG_FLAG_INFO];
+    [DDLog addLogger:textViewLogger withLevel:DDLogLevelInfo];
 
     ViewController *viewController = [self viewController];
     viewController.viewDidLoadBlock = ^(ViewController *viewController) {
