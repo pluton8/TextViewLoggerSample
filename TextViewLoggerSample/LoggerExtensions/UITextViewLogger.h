@@ -5,7 +5,7 @@
 //  Copyright (c) 2012–2013. All rights reserved.
 //
 
-#import "DDLog.h"
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
 /*
  * A logger for CocoaLumberjack that outputs the messages to
